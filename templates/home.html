@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Message Board Home</title>
+</head>
+<body>
+<h1>Message Board Home</h1>
+<ul>
+    {% for board in boards %}
+
+    {{board.name}} <br> {{board.descreption}}  <br><br><br>
+
+
+    {% endfor %}
+</ul>
+</body>
