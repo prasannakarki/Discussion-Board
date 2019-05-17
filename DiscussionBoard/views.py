@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from .models import Board
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Board, Topic , Post
 from django.http import  HttpResponse
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -16,5 +18,9 @@ def HomePageView(request):
     return render(request, 'home.html', {'boards': boards})
 
 
+def boards_topics(request, pk):
+	board = get_object_or_404(Board, pk = pk)
+
+	return render(request, 'topics.html', {'board':board})
 
 
